@@ -1,1 +1,14 @@
-# BaseJava
+# Development of the Resume Database web application
+
+### Technologies: Java, Intellij IDEA, Git, Maven, Log4j2, PostgreSQL, JUnit5, JDBC, Lombok, Apache Tomcat, HTTP, Servlets, JSP/JSTL, XML, JSON
+
+#### Storing a resume:
+* In memory based on Array, Sorted array, List and Associated Array (Map)
+* In the file system
+* In standard and custom Java serialization
+* In JSON format (Google Gson)
+* In XML format (JAXB)
+* In a PostgreSQL relational database
+
+#### Deploying a web application:
+* To the Tomcat servlet container
