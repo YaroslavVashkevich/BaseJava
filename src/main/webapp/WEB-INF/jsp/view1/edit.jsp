@@ -8,13 +8,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/view1/style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <jsp:useBean id="resume" type="org.database.resume.model.Resume" scope="request"/>
     <title>Резюме ${resume.fullName}</title>
 </head>
 <body>
-<%@ include file="/WEB-INF/jsp/fragments/header.jsp" %>
+<%@ include file="/WEB-INF/jsp/view1/fragments/header.jsp" %>
 <form method="post" action="resume" enctype="application/x-www-form-urlencoded">
     <input type="hidden" name="uuid" value="${resume.uuid}">
     <dl>
@@ -41,10 +41,12 @@
                 <textarea name="${type}" cols=75 rows=5>${section.content}</textarea>
             </c:when>
             <c:when test="${type=='QUALIFICATIONS' || type=='ACHIEVEMENT'}">
-                    <textarea name="${type}" cols=75 rows=5><%=String.join("\n", ((ListSection) section).getItems())%></textarea>
+                <textarea name="${type}" cols=75
+                          rows=5><%=String.join("\n", ((ListSection) section).getItems())%></textarea>
             </c:when>
             <c:when test="${type=='EXPERIENCE' || type=='EDUCATION'}">
-                <c:forEach var="org" items="<%=((OrganizationSection) section).getOrganizations()%>" varStatus="counter">
+                <c:forEach var="org" items="<%=((OrganizationSection) section).getOrganizations()%>"
+                           varStatus="counter">
                     <dl>
                         <dt>Название учреждения:</dt>
                         <dd><input type="text" name="${type}" size=100 value="${org.homePage.name}"></dd>
@@ -75,13 +77,15 @@
                             <dl>
                                 <dt>Должность:</dt>
                                 <dd>
-                                    <input type="text" name="${type}${counter.index}title" size=75 value="${position.title}">
+                                    <input type="text" name="${type}${counter.index}title" size=75
+                                           value="${position.title}">
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>Описание:</dt>
                                 <dd>
-                                    <textarea name="${type}${counter.index}description" rows=2 cols=75>${position.description}</textarea>
+                                    <textarea name="${type}${counter.index}description" rows=2
+                                              cols=75>${position.description}</textarea>
                                 </dd>
                             </dl>
                         </c:forEach>
@@ -96,6 +100,6 @@
 <form action="resume">
     <button>Отменить</button>
 </form>
-<%@ include file="/WEB-INF/jsp/fragments/footer.jsp" %>
+<%@ include file="/WEB-INF/jsp/view1/fragments/footer.jsp" %>
 </body>
 </html>

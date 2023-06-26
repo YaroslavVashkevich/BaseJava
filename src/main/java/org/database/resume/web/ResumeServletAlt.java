@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/resume")
-public class ResumeServlet extends HttpServlet {
+@WebServlet("/resumeAlt")
+public class ResumeServletAlt extends HttpServlet {
     Storage storage;
 
     @Override
@@ -32,13 +32,13 @@ public class ResumeServlet extends HttpServlet {
         String action = req.getParameter("action");
         if (action == null) {
             req.setAttribute("resumes", storage.getAllSorted());
-            req.getRequestDispatcher("/WEB-INF/jsp/view1/list.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/view2/list.jsp").forward(req, resp);
         }
         Resume resume;
         switch (action) {
             case "delete":
                 storage.delete(uuid);
-                resp.sendRedirect("resume");
+                resp.sendRedirect("resumeAlt");
                 return;
             case "view":
                 resume = storage.get(uuid);
@@ -61,7 +61,7 @@ public class ResumeServlet extends HttpServlet {
                 throw new IllegalArgumentException("Action " + " is illegal");
         }
         req.setAttribute("resume", resume);
-        req.getRequestDispatcher("view".equals(action) ? "/WEB-INF/jsp/view1/view.jsp" : "/WEB-INF/jsp/view1/edit.jsp").forward(req, resp);
+        req.getRequestDispatcher("view".equals(action) ? "/WEB-INF/jsp/view2/view.jsp" : "/WEB-INF/jsp/view2/edit.jsp").forward(req, resp);
     }
 
     @Override
@@ -141,7 +141,7 @@ public class ResumeServlet extends HttpServlet {
         } else {
             storage.update(resume);
         }
-        resp.sendRedirect("resume");
+        resp.sendRedirect("resumeAlt");
     }
     public void fillResumeEmpty(Resume resume){
         for (SectionType type : SectionType.values()) {
@@ -170,7 +170,6 @@ public class ResumeServlet extends HttpServlet {
                             emptyFirstPositions.add(Organization.Position.EMPTY);
                             emptyFirstPositions.addAll(organization.getPositions());
                             emptyFirstOrganizations.add(new Organization(organization.getHomePage(), emptyFirstPositions));
-
                         }
                     }
                     section = new OrganizationSection(emptyFirstOrganizations);

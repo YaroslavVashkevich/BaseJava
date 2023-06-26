@@ -32,7 +32,7 @@ public class TestData {
                         new Organization.Position(2020, Month.JANUARY, "Position №1", "Content №1"),
                         new Organization.Position(2010, Month.MARCH, 2020, Month.JANUARY, "Position №2", "Content №2")),
                 new Organization("Organization №2", "http://Organization2.ru",
-                        new Organization.Position(2005, Month.JULY,2010, Month.MARCH, "Position №1", "Pontent №1"),
+                        new Organization.Position(2005, Month.JULY,2010, Month.MARCH, "Position №1", "Content №1"),
                         new Organization.Position(2001, Month.JANUARY, 2005, Month.JULY, "Position №2", "Content №2"))));
         RESUME1.setSection(SectionType.EDUCATION, new OrganizationSection(
                 new Organization("University", "http://University.ru",

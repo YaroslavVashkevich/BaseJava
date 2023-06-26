@@ -51,3 +51,42 @@ table.center {
 a{
     text-decoration: none;
 }
+
+
+.viewTable1 {
+    table-layout: fixed;
+    width:50%
+}
+
+.qual {
+    width: 49%;
+    word-wrap:break-word;
+}
+.pos {
+    word-wrap:break-word;
+}
+
+.viewTable2 {
+    table-layout: fixed;
+    width:17%;
+}
+
+.descr1{
+    width: 500%;
+    word-wrap:break-word;
+    padding-bottom: 10px;
+}
+
+.descr2{
+    width: 500%;
+    word-wrap:break-word;
+    padding-bottom: 20px;
+}
+
+.descr3{
+    width: 600%;
+    word-wrap:break-word;
+}
+
+
+

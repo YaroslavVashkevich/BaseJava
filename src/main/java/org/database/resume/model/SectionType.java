@@ -1,7 +1,7 @@
 package org.database.resume.model;
 
 public enum SectionType {
-    OBJECTIVE("Позиция"),
+    OBJECTIVE("Должность"),
     PERSONAL("Личные качества"),
     ACHIEVEMENT("Достижения"),
     QUALIFICATIONS("Квалификация"),

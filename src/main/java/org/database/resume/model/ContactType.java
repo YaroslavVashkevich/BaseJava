@@ -1,25 +1,49 @@
 package org.database.resume.model;
 
 public enum ContactType {
-    PHONE("Тел:"),
-    MOBILE("Мобильный:"),
-    HOME_PHONE("Домашний:"),
-    SKYPE("Skype:"){
+    PHONE("Тел."),
+    MOBILE("Мобильный"),
+    HOME_PHONE("Домашний"),
+    SKYPE("Skype"){
         @Override
         public String toHtml0(String value) {
-            return "<a href=\"skype:" + value + "\">" + value + "</a>";
+            return getTitle() + ": " + "<a class=\"contact-link\" href='" + "skype:" + "'>" + value + "</a>";
         }
     },
-    MAIL("E-mail:"){
+    MAIL("E-mail"){
         @Override
         public String toHtml0(String value) {
-            return "<a href=\"mailto:" + value + "\">" + value + "</a>";
+            return getTitle() + ": " + toLink(value);
+        }
+        @Override
+        public String toLink(String value) {
+            return (value == null) ? "" : "<a class=\"contact-link\" href='" + "mailto:" + "'>" + value + "</a>" ;
         }
     },
-    LINKEDIN("LinkedIn:"),
-    GITHUB("GitHub:"),
-    STATCKOVERFLOW("Stackoverflow:"),
-    HOMEPAGE("Домашняя страница:");
+    LINKEDIN("LinkedIn"){
+        @Override
+        public String toHtml0(String value) {
+            return toLink(value);
+        }
+    },
+    GITHUB("GitHub"){
+        @Override
+        public String toHtml0(String value) {
+            return toLink(value);
+        }
+    },
+    STATCKOVERFLOW("Stackoverflow"){
+        @Override
+        public String toHtml0(String value) {
+            return toLink(value);
+        }
+    },
+    HOMEPAGE("Домашняя страница"){
+        @Override
+        public String toHtml0(String value) {
+            return toLink(value);
+        }
+    };
     private final String title;
 
     ContactType(String title) {
@@ -31,10 +55,19 @@ public enum ContactType {
     }
 
     protected String toHtml0(String value){
-        return title + " " + value;
+        return title + ": " + value;
     }
 
     public String toHtml(String value){
         return (value == null) ? "" : toHtml0(value);
     }
+
+    public String toLink(String href) {
+        return toLink(href, title);
+    }
+
+    public static String toLink(String href, String title) {
+        return "<a class=\"contact-link\" href='" + href + "' target=\"_blanc\">" + title + "</a>";
+    }
+
 }
