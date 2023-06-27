@@ -8,6 +8,7 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/view2/style.css">
     <link rel="stylesheet" href="css/view2/view.css">
+    <link rel="stylesheet" href="css/view2/theme/${theme}.css">
     <jsp:useBean id="resume" type="org.database.resume.model.Resume" scope="request"/>
     <title>Резюме ${resume.fullName}</title>
 </head>
@@ -16,7 +17,7 @@
 <div class="scrollable-panel">
     <div class="form-wrapper">
         <div class="full-name">${resume.fullName}
-            <a href="resumeAlt?uuid=${resume.uuid}&action=edit"><img src="img/view2/edit.svg" alt=""></a>
+            <a href="resumeAlt?uuid=${resume.uuid}&action=edit&theme=${theme}"><img src="img/view2/${theme}/edit.svg" alt=""></a>
         </div>
         <div class="contacts">
             <c:forEach var="contactEntry" items="${resume.contacts}">

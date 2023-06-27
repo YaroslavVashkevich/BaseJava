@@ -7,7 +7,7 @@ table {
 
 .table-wrapper {
     height: 100%;
-    min-width: 610px;
+    min-width: 960px;
     width: 50%;
     margin: 0 0 0 25%;
     display: block;
@@ -26,11 +26,9 @@ table {
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
-
     width: 70px;
     margin-left: 13px;
     display: block;
-
     color: var(--add-resume-text-color);
 }
 
@@ -97,7 +95,7 @@ table {
 
 .info-column {
     text-align: start;
-    width: 250px !important;
+    width: 300px !important;
     min-width: 200px !important;
 }
 

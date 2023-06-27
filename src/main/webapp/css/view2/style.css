@@ -101,6 +101,42 @@ body {
     text-decoration: underline;
 }
 
+.header-text-anchor {
+    color: var(--header-anchor-color);
+    text-decoration: none;
+}
+
+.header-text-anchor:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.themes {
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    float: right;
+    display: flex;
+    margin: 40px 24px 0 0;
+    color: var(--theme-text-color);
+}
+
+.theme-title {
+    width: 45px;
+}
+
+.theme-selector option {
+    color: var(--table-header-background);
+    background: var(--table-header-text-color);
+}
+
+.theme-selector select {
+    color: var(--table-header-text-color);
+    background: var(--table-header-background);
+    border: none;
+}
 
 .contact-link {
     color: var(--contact-link-color);
@@ -110,31 +146,4 @@ body {
 .contact-link:hover {
     text-decoration: underline;
     opacity: 0.8;
-}
-
-:root {
-    --header-background: #EDEFF2;
-    --header-text-color: #4A586E;
-    --header-arrow-background: #FFFFFF;
-    --footer-text-color: #4A586E;
-    --footer-anchor-color: #4A586E;
-    --anchor-color: #4A586E;
-    --text-color: #4A586E;
-    --add-resume-text-color: #4A586E;
-    --body-background: #FFFFFF;
-    --table-header-text-color: #4A586E;
-    --table-header-background: #E0E4EA;
-    --table-text-color: #169FE1;
-    --table-odd-row-background: #ECEEF2;
-    --table-even-row-background: #F8F9FA;
-    --table-shadow-color: none;
-    --input-field-background: #F8F9FA;
-    --input-field-shadow: #E0E4EA;
-    --spacer-background: #E0E4EA;
-    --submit-button-color: #319848;
-    --submit-button-background: #FFFFFF;
-    --save-button-background: #319848;
-    --cancel-button-color: #B7616A;
-    --button-text-color: #F8F9FA;
-    --contact-link-color: #169FE1;
 }

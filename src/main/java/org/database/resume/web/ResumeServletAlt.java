@@ -14,22 +14,33 @@ import org.database.resume.util.HtmlUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @WebServlet("/resumeAlt")
 public class ResumeServletAlt extends HttpServlet {
-    Storage storage;
+    private enum THEME {
+        dark, light
+    }
+    private Storage storage;
+    private final Set<String> themes = new HashSet<>();
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         storage = new SqlStorage();
+        for (THEME t : THEME.values()) {
+            themes.add(t.name());
+        }
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uuid = req.getParameter("uuid");
         String action = req.getParameter("action");
+        String theme = req.getParameter("theme");
+        req.setAttribute("theme", getTheme(req));
         if (action == null) {
             req.setAttribute("resumes", storage.getAllSorted());
             req.getRequestDispatcher("/WEB-INF/jsp/view2/list.jsp").forward(req, resp);
@@ -38,7 +49,7 @@ public class ResumeServletAlt extends HttpServlet {
         switch (action) {
             case "delete":
                 storage.delete(uuid);
-                resp.sendRedirect("resumeAlt");
+                resp.sendRedirect("resumeAlt?theme=" + theme);
                 return;
             case "view":
                 resume = storage.get(uuid);
@@ -141,7 +152,7 @@ public class ResumeServletAlt extends HttpServlet {
         } else {
             storage.update(resume);
         }
-        resp.sendRedirect("resumeAlt");
+        resp.sendRedirect("resumeAlt?theme=" + getTheme(req));
     }
     public void fillResumeEmpty(Resume resume){
         for (SectionType type : SectionType.values()) {
@@ -177,5 +188,10 @@ public class ResumeServletAlt extends HttpServlet {
             }
             resume.setSection(type, section);
         }
+    }
+
+    private String getTheme(HttpServletRequest request) {
+        String theme = request.getParameter("theme");
+        return themes.contains(theme) ? theme : THEME.light.name();
     }
 }

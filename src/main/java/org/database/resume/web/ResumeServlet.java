@@ -18,7 +18,7 @@ import java.util.List;
 
 @WebServlet("/resume")
 public class ResumeServlet extends HttpServlet {
-    Storage storage;
+    private Storage storage;
 
     @Override
     public void init(ServletConfig config) throws ServletException {

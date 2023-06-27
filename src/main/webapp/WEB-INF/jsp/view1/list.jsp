@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/view1/style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <title>Список всех резюме</title>
+    <title>Список резюме</title>
 </head>
 <body>
 <%@ include file="/WEB-INF/jsp/view1/fragments/header.jsp" %>
@@ -24,16 +24,16 @@
     <c:forEach var="resume" items="${resumes}">
         <jsp:useBean id="resume" type="org.database.resume.model.Resume"/>
         <tr>
-            <td><a href="resume?uuid=${resume.uuid}&action=view" title="К резюме">${resume.fullName}</a></td>
-            <td>${resume.getSection(SectionType.OBJECTIVE).content}</td>
+            <td style="width: 250px"><a href="resume?uuid=${resume.uuid}&action=view" title="К резюме">${resume.fullName}</a></td>
+            <td style="width: 350px">${resume.getSection(SectionType.OBJECTIVE).content}</td>
                 <%--<td>${ContactType.MAIL.toHtml(resume.getContact(ContactType.MAIL))}</td>--%>
-            <td align="center"><a href="resume?uuid=${resume.uuid}&action=edit"><img src="img/view1/edit.png"
+            <td style="width: 60px" align="center"><a href="resume?uuid=${resume.uuid}&action=edit"><img src="img/view1/edit.png"
                                                                                      title="Редактировать"></a></td>
-            <td align="center"><a href="resume?uuid=${resume.uuid}&action=copy" title="Копировать"><img
+            <td style="width: 60px" align="center"><a href="resume?uuid=${resume.uuid}&action=copy" title="Копировать"><img
                     src="img/view1/copy.png" title="Копировать"></a></td>
-            <td align="center"><a href="resume?uuid=${resume.uuid}&action=delete"><img src="img/view1/remove.png"
+            <td style="width: 60px" align="center"><a href="resume?uuid=${resume.uuid}&action=delete"><img src="img/view1/remove.png"
                                                                                        title="Удалить"></a></td>
-            <td align="center"><a href="resume?action=add" title="Добавить"><img src="img/view1/add.png"
+            <td style="width: 60px" align="center"><a href="resume?action=add" title="Добавить"><img src="img/view1/add.png"
                                                                                  title="Добавить"></a></td>
         </tr>
     </c:forEach>
