@@ -1,7 +1,6 @@
 package org.database.resume.sql;
 
 import org.database.resume.exception.StorageException;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
