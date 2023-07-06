@@ -26,9 +26,14 @@
 <div class="scrollable-panel">
     <div class="table-wrapper">
         <div class="add-resume">
+            <div class="exit-resume">
+                <a class="no-underline-anchor" href="logout"><img src="img/view2/${theme}/exit.png" alt=""></a>
+                <a class="text-anchor" href="logout"><p class="add-resume-title">Выход</p></a>
+            </div>
             <a class="no-underline-anchor" href="resumeAlt?action=add&theme=${theme}"><img src="img/view2/${theme}/add.svg" alt=""></a>
             <a class="text-anchor" href="resumeAlt?action=add&theme=${theme}"><p class="add-resume-title">Добавить резюме</p></a>
         </div>
+
         <div class="resumes-list">
             <table>
                 <tr class="t-header">

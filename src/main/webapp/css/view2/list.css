@@ -32,6 +32,15 @@ table {
     color: var(--add-resume-text-color);
 }
 
+.exit-resume {
+    height: 100px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    float: left;
+}
+
 .resumes-list {
     width: 100%;
 }

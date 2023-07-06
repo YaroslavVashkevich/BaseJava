@@ -1,4 +1,5 @@
-CREATE DATABASE resume_database;
+CREATE
+DATABASE resume_database;
 
 CREATE TABLE resume
 (
@@ -25,6 +26,15 @@ CREATE TABLE section
 );
 
 CREATE UNIQUE INDEX section_idx ON section (resume_uuid, type);
+
+CREATE TABLE users
+(
+    id       SERIAL PRIMARY KEY,
+    name     VARCHAR(124) NOT NULL,
+    email    VARCHAR(124) NOT NULL UNIQUE,
+    password VARCHAR(124) NOT NULL
+);
+
 
 INSERT INTO resume (uuid, full_name)
 VALUES ('1f22b9d3-3090-4f79-bd4d-307ae72d6029', 'name1'),

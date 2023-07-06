@@ -1,6 +1,6 @@
 # Development of the Resume Database web application
 
-### Technologies: Java, Intellij IDEA, Git, Maven, Log4j2, PostgreSQL, JUnit5, JDBC, Apache Tomcat, HTTP, Servlets, JSP/JSTL, XML, JSON
+### Technologies: Java, Intellij IDEA, Git, Maven, Log4j2, PostgreSQL, JUnit5, JDBC, Apache Tomcat, HTTP, Servlets, JSP/JSTL, Lombok, XML, JSON
 
 #### Storing a resume:
 * In memory based on Array, Sorted array, List and Associated Array (Map)
