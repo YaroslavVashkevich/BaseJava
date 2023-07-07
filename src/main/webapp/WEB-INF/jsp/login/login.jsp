@@ -24,17 +24,17 @@
             <input class="form-styling" type="text" name="password" required/>
             <input class="btn-in-up" type="submit" value="Sign in"/>
             <c:if test="${param.errorLog != null}">
-                <div class="login">
+                <div class="loginError">
                     <span class="inner">Email or password is not correct!</span>
                 </div>
             </c:if>
             <c:if test="${param.errorReg != null}">
-                <div class="login">
+                <div class="loginError">
                     <span class="inner">Email already exists! Try registering again.</span>
                 </div>
             </c:if>
             <c:if test="${param.success != null}">
-                <div class="login">
+                <div class="loginSuccess">
                     <span class="inner">You have successfully registered. Enter your email and password.</span>
                 </div>
             </c:if>

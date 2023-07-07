@@ -181,8 +181,13 @@ label {
     transition: background .5s ease;
  }
 
-.login {
+.loginError {
   color: red;
+  text-align: center;
+}
+
+.loginSuccess {
+  color: #0fe70f;
   text-align: center;
 }
 

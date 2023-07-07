@@ -22,7 +22,7 @@ public class RegistrationServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         userService.checkEmail(req.getParameter("email")).ifPresentOrElse(
                 user -> onLoginFail(resp),
                 () -> onLoginSuccess(req, resp)
