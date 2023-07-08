@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,6 +9,10 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body class="ss-preload">
+
+<fmt:setLocale value="${sessionScope.lang != null ? sessionScope.lang : (param.lang != null ? param.lang : 'en_US')}"/>
+<fmt:setBundle basename="translations"/>
+
 <div id="preloader">
     <div id="loader">
         <div></div>
@@ -17,13 +23,9 @@
 <header>
     <div class="row">
         <div class="column">
-            <h1>Разработка web-приложения «База данных резюме»</h1>
+            <h1><fmt:message key="page.start.title"/></h1>
             <p class="lead">
-                Используемые технологии: Java, Intellij IDEA, Git, Maven, Log4j2, PostgreSQL, JUnit5, JDBC, Apache
-                Tomcat, HTTP, Servlets,JSP/JSTL, Lombok, XML, JSON. Хранение резюме: в памяти на основе массива,
-                отсортированного массива, списка и ассоциированного массива(Map), в файловой системе, в стандартной и
-                кастомной сериализации Java, в формате JSON (Google Gson), в формате XML (JAXB), в реляционной базе данных
-                PostgreSQL. Деплой веб-приложения: в контейнер сервлетов Apache Tomcat, на собственный выделенный сервер.
+                <fmt:message key="page.start.content"/>
             </p>
         </div>
     </div>
@@ -37,7 +39,7 @@
                 </a>
             </div>
             <div class="entry__title">
-                <h3>User interface №1</h3>
+                <h3><fmt:message key="page.start.interface1"/></h3>
             </div>
         </div>
         <div class="column">
@@ -47,7 +49,7 @@
                 </a>
             </div>
             <div class="entry__title">
-                <h3>User interface №2</h3>
+                <h3><fmt:message key="page.start.interface2"/></h3>
             </div>
         </div>
     </div>

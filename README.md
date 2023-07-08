@@ -10,6 +10,8 @@
 * In XML format (JAXB)
 * In a PostgreSQL relational database
 
+#### Implemented: authentication, authorization, internationalization.
+
 #### Deploying a web application:
 * To the Tomcat servlet container
 * To your own dedicated server www.java-web.ru/resume

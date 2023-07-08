@@ -6,6 +6,6 @@
         </div>
     </a>
     <a class="header-text-anchor" href="resumeAlt?theme=${theme}">
-        <span class="resumes-control-title">Управление базой данных резюме</span>
+        <span class="resumes-control-title"><fmt:message key="page.view.header"/></span>
     </a>
 </div>

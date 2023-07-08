@@ -5,6 +5,7 @@
 <%@ page import="org.database.resume.util.DateUtil" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,7 +14,9 @@
     <link rel="stylesheet" href="css/view2/edit.css">
     <link rel="stylesheet" href="css/view2/theme/${theme}.css">
     <jsp:useBean id="resume" type="org.database.resume.model.Resume" scope="request"/>
-    <title>Резюме ${resume.fullName}</title>
+    <fmt:setLocale value="${sessionScope.lang != null ? sessionScope.lang : (param.lang != null ? param.lang : 'en_US')}"/>
+    <fmt:setBundle basename="translations"/>
+    <title><fmt:message key="page.view.view.title"/> ${resume.fullName}</title>
 </head>
 <body>
 <%@ include file="/WEB-INF/jsp/view2/fragments/header.jsp" %>
